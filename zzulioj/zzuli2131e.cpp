@@ -1,34 +1,49 @@
 //
 // Created by miao on 2017/4/22.
 //
+//
+// Created by miao on 2017/4/22.
+//
 
 //
 // Created by miao on 2017/4/21.
 //
 
 #include <bits/stdc++.h>
+#define rep1(i,x,y) for (int i = x;i <= y;i++)
 using namespace std;
 const  int maxn=500;
 int T,n,k;
 int mark[maxn];
 int cnt[maxn];
-int m[410][410];
+int m[maxn][maxn];
 int main(){
 
     cin>>T;
-    for (int i=1;i<= T;++i ){
+        while(T--){
         cin>>n >> k;
-        for (int j = 1; j <=n ; ++j) {
-            cin >> mark[j] >> cnt[j];
-
+        for (int i = 1; i <=n ; ++i) {
+            cin >> mark[i];
         }
-
+            for (int i = 1; i <= n; ++i) {
+                cin >> cnt[i];
+            }
         for (int i = 1; i <= n ; ++i) {
-            for (int j = 0; j <=n ; ++j) {
+            for (int j = 1; j <=n ; ++j) {
                 cin>>m[i][j];
             }
         }
-        //以上为输入
+    cin >> n >> k;
+    rep1(i,1,n)
+        cin >> mark[i];
+    rep1(i,1,n)
+        cin >> cnt[i];
+    rep1(i,1,n)
+        rep1(j,1,n)
+        {
+            cin >>m[i][j];
+        }
+     //   以上为输入
         for (int i = 1; i <=n ; ++i) {
             mark[k]+=m[k][i];
             cnt[k]-=m[k][i];
@@ -36,9 +51,10 @@ int main(){
         }
         mark[k] += cnt[k];
         cnt[k]=0;
-        for (int i = 1; i <= n; ++i) {
+
+        for (int i = 1; i <n; ++i) {
             for (int j = i+1; j <=n; ++j) {
-                if (m[i][j] != 0) {
+                if (m[i][j] ) {
                     if (mark[i] < mark[j]) {
                         int x = min(mark[j] - mark[i], m[i][j]);
                         mark[i] += x;
@@ -59,7 +75,7 @@ int main(){
         for (int i = 1; i <=n ; ++i) {
             if(mark[i] > mark[k] ){
                 fi=true;
-                break;
+               break;
             }
         }
         if (fi){ puts("No") ; }
