@@ -2,6 +2,10 @@
 // Created by miao on 2017/5/3.
 //
 
+// https://en.wikipedia.org/wiki/Lucas%27s_theorem
+//http://blog.sina.com.cn/s/blog_b9a401a40101dghn.html
+//传说中的数论，高中数学竞赛题？
+
 #include <bits/stdc++.h>
 
 using namespace std;
