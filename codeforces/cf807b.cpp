@@ -10,7 +10,7 @@ int p, x, y, cnt = 0;
 
 bool pd(int s) {
     int i = (s / 50) % 475;
-    for (int j = 1; j < 25; ++j) {
+    for (int j = 1; j <= 25; ++j) {
         i = (i * 96 + 42) % 475;
         if (i + 26 == p) return true;
     }
