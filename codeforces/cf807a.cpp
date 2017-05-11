@@ -5,6 +5,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+
 int a[100005][2];
 
 int main() {
